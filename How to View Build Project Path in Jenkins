@@ -27,7 +27,6 @@ Before you begin, ensure that you have the following:
 
 If you prefer using the command line, you can also retrieve the project path by executing the following command:
 
-```bash
 jenkins_home=$(curl -s 'http://localhost:8080/jenkins/script' --data-urlencode 'script=println(Jenkins.instance.rootPath)' --user <username>:<password>)
 echo ${jenkins_home}
 
