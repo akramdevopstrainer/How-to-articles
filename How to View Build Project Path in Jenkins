@@ -1,0 +1,40 @@
+# How to View Build Project Path in Jenkins
+
+Welcome to the guide on how to view the build project path in Jenkins! This step-by-step tutorial will walk you through the process of locating the project path for a specific build in Jenkins.
+
+## 🛠️ Prerequisites
+
+Before you begin, ensure that you have the following:
+
+- Access to a Jenkins server
+- Basic knowledge of Jenkins terminology and navigation
+
+## 📜 Steps to View Build Project Path
+
+1. Launch Jenkins: Open your web browser and navigate to the URL of your Jenkins server.
+
+2. Locate the build: Find the specific build for which you want to view the project path. This could be a job or a pipeline.
+
+3. Open the build details: Click on the build number or ID associated with the desired build. This will take you to the build details page.
+
+4. View the project path: Look for the "Workspace" or "Project Workspace" section on the build details page. This section displays the path to the project's workspace or checkout directory.
+
+5. Note the project path: Take note of the path mentioned in the "Workspace" or "Project Workspace" section. This path represents the location where the build project's files and source code are stored.
+
+6. Access the project path: Depending on your Jenkins setup, you may need to connect to the Jenkins server or a connected agent/slave machine to access the project path. Use the appropriate method to access the project path, such as SSH or a file explorer.
+
+## 💻 Command Line Approach
+
+If you prefer using the command line, you can also retrieve the project path by executing the following command:
+
+```bash
+jenkins_home=$(curl -s 'http://localhost:8080/jenkins/script' --data-urlencode 'script=println(Jenkins.instance.rootPath)' --user <username>:<password>)
+echo ${jenkins_home}
+
+Replace <username> and <password> with your Jenkins credentials. This command uses the Jenkins Script Console API to retrieve the Jenkins home directory path.
+
+📝 Conclusion
+
+By following the steps provided in this guide, you should now be able to view the build project path for a specific build in Jenkins. Whether you prefer navigating through the Jenkins interface or using the command line approach, you have multiple options to obtain the necessary information.
+
+Remember to note down the project path for further reference or troubleshooting purposes. Happy building!
